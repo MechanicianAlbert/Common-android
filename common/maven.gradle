@@ -1,0 +1,21 @@
+apply plugin: 'maven'
+
+ext {
+    LOCAL_REPO_URL = 'file:///D:/Code/Maven/maven-repo/repository'
+
+    POM_GROUP = 'com.albertech.common'
+    POM_ARTIFACT = 'common'
+    POM_VERSION = android.defaultConfig.versionName
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository (url: LOCAL_REPO_URL)
+
+        pom.project {
+            groupId project.POM_GROUP
+            artifactId project.POM_ARTIFACT
+            version project.POM_VERSION
+        }
+    }
+}
