@@ -3,7 +3,6 @@ package com.albertech.common.base.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -34,7 +33,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRoot = inflater.inflate(layoutRese(), container, false);
+        mRoot = inflater.inflate(layoutRes(), container, false);
         initView(mRoot);
         initListener();
         return mRoot;
@@ -154,6 +153,6 @@ public abstract class BaseFragment extends Fragment {
      * 获得根布局资源id
      * @return 根布局资源id
      */
-    protected abstract int layoutRese();
+    protected abstract int layoutRes();
 
 }

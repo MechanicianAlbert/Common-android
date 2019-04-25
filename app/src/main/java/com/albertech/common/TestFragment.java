@@ -24,7 +24,7 @@ public class TestFragment extends BaseFragment {
 
 
     @Override
-    protected int layoutRese() {
+    protected int layoutRes() {
         return R.layout.fragment_test;
     }
 
