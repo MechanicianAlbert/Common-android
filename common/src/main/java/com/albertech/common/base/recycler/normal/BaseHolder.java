@@ -57,7 +57,7 @@ public class BaseHolder<Adapter extends BaseRecyclerAdapter<? extends BaseHolder
     }
 
 
-    protected final void setText(int id, String text) {
+    protected final void setText(int id, CharSequence text) {
         TextView tv = $(id);
         if (tv != null) {
             tv.setText(text);
