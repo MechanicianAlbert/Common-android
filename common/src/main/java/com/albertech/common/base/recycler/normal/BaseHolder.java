@@ -56,6 +56,9 @@ public class BaseHolder<Adapter extends BaseRecyclerAdapter<? extends BaseHolder
         return mAdapter.getItem(position);
     }
 
+    protected final void notifyCurrentItemChanged() {
+        getAdapter().notifyItemChanged(getAdapterPosition());
+    }
 
     protected final void setText(int id, CharSequence text) {
         TextView tv = $(id);
@@ -82,6 +85,13 @@ public class BaseHolder<Adapter extends BaseRecyclerAdapter<? extends BaseHolder
         View v = $(id);
         if (v != null) {
             v.setVisibility(visibility);
+        }
+    }
+
+    protected final void setOnClickListener(int id, View.OnClickListener l) {
+        View v = $(id);
+        if (v != null) {
+            v.setOnClickListener(l);
         }
     }
 
