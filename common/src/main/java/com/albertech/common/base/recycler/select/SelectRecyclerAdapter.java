@@ -90,7 +90,9 @@ public abstract class SelectRecyclerAdapter<Holder extends SelectHolder<? extend
     public List<Bean> getSelections() {
         List<Bean> selections = new ArrayList<>();
         for (int selectedPosition : SELECTED_POSITIONS) {
-            selections.add(getItem(selectedPosition));
+            if (selectedPosition < getItemCount()) {
+                selections.add(getItem(selectedPosition));
+            }
         }
         return selections;
     }
