@@ -113,18 +113,22 @@ public class BaseHolder<Adapter extends BaseRecyclerAdapter<? extends BaseHolder
     @Override
     public final void onClick(View view) {
         int position = getAdapterPosition();
-        Bean bean = getItem(position);
-        if (!onItemClick(position, bean)) {
-            mAdapter.onItemClick(position, bean);
+        if (position >= 0 && position < getAdapter().getItemCount()) {
+            Bean bean = getItem(position);
+            if (!onItemClick(position, bean)) {
+                mAdapter.onItemClick(position, bean);
+            }
         }
     }
 
     @Override
     public final boolean onLongClick(View view) {
         int position = getAdapterPosition();
-        Bean bean = getItem(position);
-        if (!onItemLongClick(position, bean)) {
-            mAdapter.onItemLongClick(position, bean);
+        if (position >= 0 && position < getAdapter().getItemCount()) {
+            Bean bean = getItem(position);
+            if (!onItemLongClick(position, bean)) {
+                mAdapter.onItemLongClick(position, bean);
+            }
         }
         return false;
     }
